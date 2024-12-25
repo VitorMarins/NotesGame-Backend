@@ -20,7 +20,7 @@ exports.login = async (req, res) => {
     if (!usuario || !(await usuario.compareSenha(senha))) {
       return res.status(401).json({ message: 'Credenciais inválidas' });
     }
-    const token = jwt.sign({ id: usuario._id }, config.secret, { expiresIn: '3h' });
+    const token = jwt.sign({ id: usuario._id, nome: usuario.nome  }, config.secret);
     res.json({ token });
   } catch (error) {
     res.status(500).json({ error: error.message });

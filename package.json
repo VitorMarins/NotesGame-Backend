@@ -1,5 +1,5 @@
 {
-  "name": "lista-de-jogos",
+  "name": "notesgame-backend",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -15,7 +15,7 @@
   ],
   "author": "Vitor Marins",
   "license": "ISC",
-  "description": "",
+  "description": " API para o lista de jogos",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",

@@ -28,9 +28,9 @@ exports.login = async (req, res) => {
       subject: 'Novo login no Notesgame',
       text: `Identificamos um novo login, ${usuario.nome}. Data e hora: ${Data}`,
       html: `
-      <h4 style='color: black'>Identificamos um novo login, ${usuario.nome}.</h4>
+      <h2 style='color: black'>Identificamos um novo login, ${usuario.nome}.</h2>
       <p style='font-size: 15px; color: black'>
-      <br/> Data e hora: ${Data.toString()}.<br/>Se foi você quem fez isso, não se preocupe.
+      Data e hora: ${Data.toString()}.<br/>Se foi você quem fez isso, não se preocupe.
       Caso não reconheça o acesso, recomendamos que altere sua senha.
       <br/>Para isso acesse sua conta e clique em Segurança da conta/Alterar senha.
       <br/>Nunca informe seus dados de acesso para outra pessoa.

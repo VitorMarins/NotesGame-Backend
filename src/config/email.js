@@ -9,8 +9,8 @@ module.exports = {
     auth: {
       user: process.env.EMAIL_USER,               // E-mail do remetente
       acesstoken: process.env.EMAIL_ACCESS_TOKEN, // Token de acesso do e-mail
-      clientId: process.env.CLIENT_ID,            // ID do aplicativo
-      clientSecret: process.env.CLIENT_SECRET,    // Secret do aplicativo
-      refreshToken: process.env.REFRESH_TOKEN,    // Token de atualização do aplicativo
+      clientId: process.env.EMAIL_CLIENT_ID,            // ID do aplicativo
+      clientSecret: process.env.EMAIL_CLIENT_SECRET,    // Secret do aplicativo
+      refreshToken: process.env.EMAIL_REFRESH_TOKEN,    // Token de atualização do aplicativo
     },
 };

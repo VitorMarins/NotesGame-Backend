@@ -14,7 +14,7 @@ const app = express();
 connectDB();
 
 const corsConfig = {
-  origin: ['https://notesgame.vercel.app', 'http://localhost:3000'],
+  origin: ['https://notesgame.vercel.app', 'http://localhost:5173', 'http://localhost:3000'],
   methods: 'GET,POST,PUT,DELETE',
   optionsSuccessStatus: 200,
   allowedHeaders: ['Content-Type', 'Authorization'],

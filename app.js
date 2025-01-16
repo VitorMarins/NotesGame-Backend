@@ -13,13 +13,13 @@ const app = express();
 
 connectDB();
 
-const CorsConfig = {
+const corsConfig = {
   origin: ['https://notesgame.vercel.app', 'http://localhost:3000'],
   methods: 'GET,POST,PUT,DELETE',
   optionsSuccessStatus: 200
 };
 
-app.use(cors(CorsConfig));
+app.use(cors(corsConfig));
 
 app.use(morgan('dev'));
 

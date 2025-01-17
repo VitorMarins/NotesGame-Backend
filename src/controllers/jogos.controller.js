@@ -33,14 +33,13 @@ exports.getJogobyUsuario = async (req, res) => {
 };
 
 exports.createJogo = async (req, res) => {
-    const { nome, imagem, descricao, status, categoria, plataforma, usuario } = req.body;
+    const { nome, imagem, status, genero, plataforma, usuario } = req.body;
     try {
       const jogo = new Jogos({
         nome,
         imagem,
-        descricao,
         status,
-        categoria,
+        genero,
         plataforma,
         usuario
       });

@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken');
 const Usuario = require('../models/usuario.model');
 const config = require('../config/jwt');
-const messages = require('../config/messages');
 const sendEmail = require('../middleware/email.middleware');
+const Data = new Date();
 
 exports.registrar = async (req, res) => {
   try {
@@ -13,7 +13,15 @@ exports.registrar = async (req, res) => {
       to: email,
       subject: 'Novo Conta no Notesgame',
       text: `Bem-vindo ao Notesgame, ${usuario.nome}. Data e hora: ${Data}`,
-      html: messages.mensagemCadastro,
+      html: `
+      <h2 style='color: black'>Bem-vindo ao Notesgame, ${usuario.nome}.</h2>
+      <p style='font-size: 15px; color: black'>
+      Data e hora: ${Data.toString()}.<br/>Se foi você quem fez isso, não se preocupe.
+      Caso não reconheça o acesso, recomendamos que altere sua senha.
+      <br/>Para isso acesse sua conta e clique em Segurança da conta/Alterar senha.
+      <br/>Nunca informe seus dados de acesso para outra pessoa.
+      <br/>Este é um e-mail automático. Não é necesario respondê-lo.
+      </p>`,
     });
     res.status(201).json({ message: 'Usuario registrado com sucesso!' });
   } catch (error) {
@@ -33,7 +41,13 @@ exports.login = async (req, res) => {
       to: email,
       subject: 'Novo login no Notesgame',
       text: `Identificamos um novo login, ${usuario.nome}. Data e hora: ${Data}`,
-      html: messages.mensagemLogin,
+      html: `<h2 style='color: black'>Identificamos um novo login, ${usuario.nome}.</h2>
+      <p style='font-size: 15px; color: black'>
+      Data e hora: ${Data.toString()}.<br/>Se foi você quem fez isso, não se preocupe.
+      Caso não reconheça o acesso, recomendamos que altere sua senha.
+      <br/>Para isso acesse sua conta e clique em Segurança da conta/Alterar senha.
+      <br/>Nunca informe seus dados de acesso para outra pessoa.
+      <br/>Este é um e-mail automático. Não é necessário respondê-lo.</p>`,
     });
     res.json({ token });
   } catch (error) {
